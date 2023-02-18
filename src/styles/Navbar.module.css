@@ -1,0 +1,12 @@
+.navbar{
+    height: 3rem;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #282c34;
+}
+.link{
+    margin: 0.5rem;
+    color: red;
+}
