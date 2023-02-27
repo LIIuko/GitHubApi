@@ -5,19 +5,18 @@ import RepositoryBlock from "./RepositoryBlock";
 import classes from '../styles/Repositories.module.css'
 import Loader from "./Loader";
 
-const Repository = () => {
+const Repository = ({name}) => {
 
     const [repositories, setRepositories] = useState([]);
     const [requestUserRepos, isLoading] = useFetching(async () => {
-        const response = await getAll();
+        const response = name ? await getAll(name): await getAll();
         setRepositories(response.data);
     })
 
-    useEffect(() => {
+    useEffect((name) => {
         requestUserRepos();
+    }, [name])
 
-    }, [])
-    console.log(repositories);
     return (
         <div >
             {isLoading

@@ -4,7 +4,7 @@ import Repository from "../components/Repository";
 const Projects = () => {
     return (
         <div>
-            <Repository/>
+            <Repository name={'LIIuko'}/>
         </div>
     );
 };
