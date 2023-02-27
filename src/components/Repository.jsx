@@ -17,6 +17,13 @@ const Repository = ({name}) => {
         requestUserRepos();
     }, [name])
 
+
+    if(repositories.length === 0){
+        return (
+            <></>
+        )
+    }
+
     return (
         <div >
             {isLoading
@@ -24,7 +31,7 @@ const Repository = ({name}) => {
                 <Loader/>
                 :
                 <>
-                    <h1>Проекты</h1>
+                    <h1>Проекты {name}</h1>
                     <div className={classes.repositories}>
                         {repositories.map((repository) => (
                             <RepositoryBlock key={repository.key}

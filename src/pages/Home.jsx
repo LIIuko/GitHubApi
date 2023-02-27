@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <About/>
-            <Repository/>
+            <Repository name={'LIIuko'}/>
         </div>
     );
 };
