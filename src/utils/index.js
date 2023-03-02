@@ -7,5 +7,7 @@ export const routes = [
     {path: "/about", element: <About/>, title: "About"},
     {path: "/projects", element: <Projects/>, title: "Projects"},
     {path: "/search", element: <Search/>, title: "Search"},
-    {path: "/home", element: <Home/>, title: "Home"},
+
 ]
+
+export const routeHome = {path: "/home", element: <Home/>, title: "Home"}

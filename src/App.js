@@ -9,7 +9,9 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <Navbar/>
-                <AppRouter/>
+                <main>
+                    <AppRouter/>
+                </main>
             </BrowserRouter>
         </div>
     );

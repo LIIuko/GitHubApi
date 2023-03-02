@@ -1,4 +1,4 @@
-.block{
+.block {
     display: flex;
     border-radius: 1rem;
     flex-direction: column;
@@ -8,14 +8,34 @@
     text-decoration: none;
 }
 
-.description{
+.title {
+    margin-bottom: 1.5rem;
+}
+
+.description {
+    align-self: start;
+    margin-bottom: 1.5rem;
+    font-style: italic;
     flex: 1 1 auto;
 }
 
-.reviews{
+.reviews {
     width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+}
+
+.info{
+    margin: 0 0.5rem;
+}
+
+.block__img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
 }

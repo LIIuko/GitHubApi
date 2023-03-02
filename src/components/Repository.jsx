@@ -5,7 +5,7 @@ import RepositoryBlock from "./RepositoryBlock";
 import classes from '../styles/Repositories.module.css'
 import Loader from "./Loader";
 
-const Repository = ({name}) => {
+const   Repository = ({name}) => {
 
     const [repositories, setRepositories] = useState([]);
     const [requestUserRepos, isLoading] = useFetching(async () => {
@@ -20,18 +20,27 @@ const Repository = ({name}) => {
 
     if(repositories.length === 0){
         return (
-            <></>
+            isLoading
+                ?
+                <Loader/>
+                :
+                <></>
         )
     }
 
     return (
-        <div >
+        <div>
             {isLoading
                 ?
                 <Loader/>
                 :
                 <>
-                    <h1>Проекты {name}</h1>
+                    <div className={classes.block__title}>
+                        <h1 className={classes.title}>Проекты {name}</h1>
+                        <div className={classes.block__img}>
+                            <img className={classes.avatar} src={repositories.at(0).owner.avatar_url} alt=""/>
+                        </div>
+                    </div>
                     <div className={classes.repositories}>
                         {repositories.map((repository) => (
                             <RepositoryBlock key={repository.key}
@@ -39,7 +48,8 @@ const Repository = ({name}) => {
                                              html_url={repository.html_url}
                                              forks={repository.forks}
                                              star={repository.stargazers_count}
-                                             description={repository.description}/>
+                                             description={repository.description}
+                            />
                         ))}
                     </div>
                 </>
